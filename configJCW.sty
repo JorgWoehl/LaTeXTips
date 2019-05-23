@@ -1,0 +1,74 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{configJCW}
+
+% PACKAGES
+
+% mathtools (based on amsmath)
+\RequirePackage{mathtools}
+
+% unicode-math (cannot be used with pdflatex)
+\RequirePackage[math-style=ISO]{unicode-math}
+% To change the math font, uncomment the following line:
+%\setmathfont{xits-math.otf}
+% See http://wspr.io/unicode-math/ for other supported math fonts
+
+% siunitx: SI-compliant numbers and units
+\RequirePackage{siunitx}
+
+% mhchem: chemical formulas and reaction equations (make sure mhchem is not already loaded with other options)
+\RequirePackage[version=4,arrows=pgf-filled]{mhchem}
+
+% microtype: for better output 
+\RequirePackage{microtype}
+
+% automatic cross-references (don't abbreviate "eq." etc., and capitalize)
+% must be loaded last (and after hyperref)
+\RequirePackage[noabbrev,capitalize]{cleveref}
+
+% COMMANDS
+
+% Math
+
+% semantic markup for math types
+\newcommand*{\vect}[1]{\ensuremath{\symbf{#1}}}				% vector
+\newcommand*{\matr}[1]{\ensuremath{\symbf{#1}}}				% matrix
+\newcommand*{\tens}[1]{\ensuremath{\symbfsfit{#1}}}			% tensor
+\newcommand*{\const}[1]{\ensuremath{\symup{#1}}}				% mathematical constant
+\newcommand*{\oper}[1]{\ensuremath{\mathop{}\!\symup{#1}}}		% mathematical operator
+
+% useful mathematical constants
+\newcommand{\ee}{\const{e}}								% Euler's number
+\newcommand{\ii}{\const{i}}								% imaginary unit
+
+% useful mathematical operators
+\newcommand{\dd}{\oper{d}}								% differential operator
+\newcommand{\pd}{\oper{\partial}}							% partial differential operator
+\newcommand{\Dd}{\oper{\Delta}}							% difference operator
+
+% "=" symbol for use in definitions
+\newcommand{\eqdef}{\overset{\textnormal{def}}{=}}
+
+% Text
+
+% common abbreviations
+% followed by interword space (unless followed by a punctuation mark)
+\newcommand{\etal}{\textit{et al.}}
+\newcommand{\eg}{\textit{e.g.}}	
+\newcommand{\ie}{\textit{i.e.}}
+\newcommand{\etc}{\textit{etc.}}
+
+
+\AtBeginDocument{
+	% save \pi to \oldpi
+	\let\oldpi\pi
+	% redefine \pi as the mathematical constant pi (upright pi)
+	\renewcommand{\pi}{\const{\oldpi}}
+	
+	% convert vectors with arrows into standard vectors (\vect)
+	\renewcommand{\vec}{\vect}
+	
+	% convert \ref calls to cleveref calls
+	\renewcommand{\ref}{\cref}
+}
+
+\endinput
