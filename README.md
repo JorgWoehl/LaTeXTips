@@ -10,4 +10,4 @@ It is loaded in the LaTeX preamble with
 
     \usepackage{configJCW}
     
-The file **configJCW.lyx** is the accompanying LyX macros file to properly display the new commands in LyX.
+The file **configJCW.lyx** is the accompanying LyX macros file needed to properly display the new commands in LyX.
