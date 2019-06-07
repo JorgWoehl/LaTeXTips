@@ -19,7 +19,7 @@
 \font_typewriter "default" "default"
 \font_math "auto" "auto"
 \font_default_family default
-\use_non_tex_fonts false
+\use_non_tex_fonts true
 \font_sc false
 \font_osf false
 \font_sf_scale 100 100
@@ -27,7 +27,7 @@
 \use_microtype false
 \use_dash_ligatures true
 \graphics default
-\default_output_format default
+\default_output_format pdf5
 \output_sync 0
 \bibtex_command default
 \index_command default
@@ -88,15 +88,28 @@ status collapsed
 
 \begin_layout Plain Layout
 Place this comment at the beginning of your document, in a standard text
- section (outside of title environments).
+ section (outside of title environments) – or, better yet, include this
+ entire \SpecialChar LyX
+ file via 
+\family sans
+Insert \SpecialChar menuseparator
+ File \SpecialChar menuseparator
+ Child Document
+\family default
+ at the beginning of your document using include type 
+\family sans
+Input
+\family default
+.
  
 \emph on
-Do not enter a space or line break after the comment.
+Do not enter a space or line break after the comment or include.
 \end_layout
 
 \begin_layout Plain Layout
 The following list covers all math macros defined in configJCW.sty, which
  must be loaded in the LaTeX preamble.
+ XeTeX (or LuaTeX) must be enabled.
 \end_layout
 
 \begin_layout Plain Layout
@@ -275,8 +288,6 @@ Numbers with SI units
 \end_inset
 
 
-\series default
-Start your text here.
 \end_layout
 
 \end_body
