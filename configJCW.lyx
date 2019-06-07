@@ -4,23 +4,9 @@
 \begin_header
 \save_transient_properties true
 \origin unavailable
-\textclass scrartcl
+\textclass article
 \begin_preamble
-% specific commands used in this documentation
-\usepackage{tcolorbox}
-\tcbuselibrary{minted}
-\tcbset{
- colframe=white,
- lefthand ratio=0.45
-}
-
 \usepackage{configJCW}
-\usepackage{commandsJCW}
-
-\AtBeginDocument{
- % redefine LyX menu separator to smaller version
- \renewcommand{\triangleright}{\vartriangleright}
-}
 \end_preamble
 \use_default_options true
 \maintain_unincluded_children false
@@ -33,7 +19,7 @@
 \font_typewriter "default" "default"
 \font_math "auto" "auto"
 \font_default_family default
-\use_non_tex_fonts true
+\use_non_tex_fonts false
 \font_sc false
 \font_osf false
 \font_sf_scale 100 100
@@ -41,23 +27,13 @@
 \use_microtype false
 \use_dash_ligatures true
 \graphics default
-\default_output_format pdf4
+\default_output_format default
 \output_sync 0
 \bibtex_command default
 \index_command default
 \paperfontsize default
 \spacing single
-\use_hyperref true
-\pdf_bookmarks true
-\pdf_bookmarksnumbered false
-\pdf_bookmarksopen false
-\pdf_bookmarksopenlevel 1
-\pdf_breaklinks false
-\pdf_pdfborder true
-\pdf_colorlinks true
-\pdf_backref false
-\pdf_pdfusetitle true
-\pdf_quoted_options "urlcolor=blue"
+\use_hyperref false
 \papersize default
 \use_geometry false
 \use_package amsmath 1
@@ -65,8 +41,8 @@
 \use_package cancel 1
 \use_package esint 1
 \use_package mathdots 1
-\use_package mathtools 0
-\use_package mhchem 0
+\use_package mathtools 1
+\use_package mhchem 1
 \use_package stackrel 1
 \use_package stmaryrd 1
 \use_package undertilde 1
@@ -76,9 +52,9 @@
 \use_bibtopic false
 \use_indices false
 \paperorientation portrait
-\suppress_date true
+\suppress_date false
 \justification true
-\use_refstyle 0
+\use_refstyle 1
 \use_minted 0
 \index Index
 \shortcut idx
@@ -86,8 +62,8 @@
 \end_index
 \secnumdepth 3
 \tocdepth 3
-\paragraph_separation skip
-\defskip medskip
+\paragraph_separation indent
+\paragraph_indentation default
 \is_math_indent 0
 \math_numbering_side default
 \quotes_style english
@@ -105,138 +81,141 @@
 \begin_body
 
 \begin_layout Standard
-Place a comment at the beginning of your document, in a standard text section
- (outside of title environments), and copy this text into it.
- Do not enter a space or line break after the comment.
+
+\series bold
+\begin_inset Note Comment
+status collapsed
+
+\begin_layout Plain Layout
+Place this comment at the beginning of your document, in a standard text
+ section (outside of title environments).
+ 
+\emph on
+Do not enter a space or line break after the comment.
 \end_layout
 
-\begin_layout Standard
-The following list covers all math macros defined in configJCW.sty.
+\begin_layout Plain Layout
+The following list covers all math macros defined in configJCW.sty, which
+ must be loaded in the LaTeX preamble.
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 Semantic markup for math types:
 \end_layout
 
-\begin_layout Standard
-Vector 
+\begin_layout Plain Layout
+Vector
 \begin_inset FormulaMacro
-\newcommand{\vect}[1]{}
+\newcommand{\vect}[1]{\symbf{#1}}
 {\vec{#1}}
 \end_inset
 
 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 Matrix 
 \begin_inset FormulaMacro
-\newcommand{\matr}[1]{}
+\newcommand{\matr}[1]{\symbf{#1}}
 {\underleftrightarrow{#1}}
 \end_inset
 
 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 Tensor 
 \begin_inset FormulaMacro
-\newcommand{\tens}[1]{}
-{\underleftrightarrow{#1}}
+\newcommand{\tens}[1]{\symbfsfit{#1}}
+{\underleftrightarrow{\mathsf{#1}}}
 \end_inset
 
 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 Mathematical constant 
 \begin_inset FormulaMacro
-\newcommand{\const}[1]{}
+\newcommand{\const}[1]{\symup{#1}}
 {\mathrm{#1}}
 \end_inset
 
 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 Mathematical operator 
 \begin_inset FormulaMacro
-\newcommand{\oper}[1]{}
-{\,\mathrm{#1}}
+\newcommand{\oper}[1]{\mathop{}\!\symup{#1}}
+{\thinspace#1}
 \end_inset
 
 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 Useful mathematical constants:
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 Euler's number 
 \begin_inset FormulaMacro
-\newcommand{\ee}{}
-{\const e}
+\newcommand{\ee}{\const e}
 \end_inset
 
 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 Imaginary unit 
 \begin_inset FormulaMacro
-\newcommand{\ii}{}
-{\const i}
+\newcommand{\ii}{\const i}
 \end_inset
 
 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 Old (slanted) pi 
 \begin_inset FormulaMacro
-\newcommand{\oldpi}{}
-{\pi}
+\newcommand{\oldpi}{\pi}
 \end_inset
 
 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 Useful mathematical operators:
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 Differential operator 
 \begin_inset FormulaMacro
-\newcommand{\dd}{}
-{\oper d}
+\newcommand{\dd}{\oper d}
 \end_inset
 
 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 Partial differential operator 
 \begin_inset FormulaMacro
-\newcommand{\pd}{}
-{\oper{\partial}}
+\newcommand{\pd}{\oper{\partial}}
 \end_inset
 
 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 Difference operator 
 \begin_inset FormulaMacro
-\newcommand{\Dd}{}
-{\oper{\Delta}}
+\newcommand{\Dd}{\oper{\Delta}}
 \end_inset
 
 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 \begin_inset Quotes eld
 \end_inset
 
@@ -246,59 +225,58 @@ Difference operator
 
  symbol for use in definitions 
 \begin_inset FormulaMacro
-\newcommand{\eqdef}{}
+\newcommand{\eqdef}{\overset{\textnormal{def}}{=}}
 {\overset{\textnormal{def}}{=}}
 \end_inset
 
 
 \end_layout
 
-\begin_layout Standard
-For use with the 
-\family typewriter
-siunitx
-\family default
- package:
+\begin_layout Plain Layout
+For use with the siunitx package:
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 Numbers 
 \begin_inset FormulaMacro
-\newcommand{\num}[1]{}
-{#1}
+\newcommand{\num}[1]{#1}
 \end_inset
 
-
+ (instant preview is only approximate)
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 Angles 
 \begin_inset FormulaMacro
-\newcommand{\ang}[1]{}
-{#1\textdegree}
+\newcommand{\ang}[1]{#1^{\circ}}
 \end_inset
 
-
+(instant preview is only approximate)
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 SI units 
 \begin_inset FormulaMacro
-\newcommand{\si}[1]{}
-{\textnormal{#1}}
+\newcommand{\si}[1]{\text{#1}}
 \end_inset
 
-
+ (will not produce instant preview due to unit commands)
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 Numbers with SI units 
 \begin_inset FormulaMacro
-\newcommand{\SI}[2]{}
-{#1\,\textnormal{#2}}
+\newcommand{\SI}[2]{#1\,\text{#2}}
+\end_inset
+
+(will not produce instant preview due to unit commands)
+\end_layout
+
 \end_inset
 
 
+\series default
+Start your text here.
 \end_layout
 
 \end_body
