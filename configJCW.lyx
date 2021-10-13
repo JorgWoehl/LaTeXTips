@@ -268,18 +268,18 @@ Angles
 \end_layout
 
 \begin_layout Plain Layout
-SI units 
+Units 
 \begin_inset FormulaMacro
-\newcommand{\si}[1]{\text{#1}}
+\newcommand{\unit}[1]{\text{#1}}
 \end_inset
 
  (will not produce instant preview due to unit commands)
 \end_layout
 
 \begin_layout Plain Layout
-Numbers with SI units 
+Numbers with units 
 \begin_inset FormulaMacro
-\newcommand{\SI}[2]{#1\,\text{#2}}
+\newcommand{\qty}[2]{#1\,\text{#2}}
 \end_inset
 
 (will not produce instant preview due to unit commands)
