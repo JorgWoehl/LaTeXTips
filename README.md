@@ -10,5 +10,4 @@ It is loaded in the LaTeX preamble with
 
     \usepackage{configJCW}
     
-The file **configJCW.lyx** contains the accompanying LyX macros needed to properly display things in LyX. Place
-them inside a comment at the beginning of your LyX document, as described in the file.
+The file **configJCW.lyx** contains the accompanying LyX macros needed to properly display things in LyX. Insert it at the beginning of your LyX document, as described in the file.
