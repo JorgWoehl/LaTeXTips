@@ -84,7 +84,7 @@
 
 \series bold
 \begin_inset Note Comment
-status collapsed
+status open
 
 \begin_layout Plain Layout
 Place this comment at the beginning of your document, in a standard text
@@ -246,7 +246,7 @@ Difference operator
 \end_layout
 
 \begin_layout Plain Layout
-For use with the siunitx package:
+For use with the siunitx and xfrac packages:
 \end_layout
 
 \begin_layout Plain Layout
@@ -283,6 +283,15 @@ Numbers with units
 \end_inset
 
 (will not produce instant preview due to unit commands)
+\end_layout
+
+\begin_layout Plain Layout
+Slanted fractions 
+\begin_inset FormulaMacro
+\newcommand{\sfrac}[2]{^{#1}/_{#2}}
+\end_inset
+
+(instant preview is only approximate)
 \end_layout
 
 \end_inset
